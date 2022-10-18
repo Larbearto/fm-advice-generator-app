@@ -1,0 +1,126 @@
+:root {
+  --LightCyan: hsl(193, 38%, 86%);
+  --NeonGreen: hsl(150, 100%, 66%);
+  --GrayishBlue: hsl(217, 19%, 38%);
+  --DarkGrayishBlue: hsl(217, 19%, 24%);
+  --DarkBlue: hsl(218, 23%, 16%);
+  font-family: 'Manrope';
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  animation-duration: 1.5s !important;
+  animation-iteration-count: infinite !important;
+  transition-duration: 1.5s !important;
+  scroll-behavior: auto !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--DarkBlue);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 540px;
+  height: fit-content;
+  margin-bottom: 32px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 0;
+  padding-left: 50px;
+  border-radius: 20px;
+  background-color: var(--DarkGrayishBlue);
+  color: var(--LightCyan);
+  position: relative;
+  box-shadow: 0 1rem 4.5rem -0.5rem rgba(0, 0, 0, 0.17);
+}
+
+.dice:hover {
+  box-shadow: 0 1px 8px 5px rgb(63, 186, 124);
+  color: rgba(255, 255, 255, 1);
+  transition: all ease-in-out 0.4s;
+  transition-duration: 300ms;
+}
+
+.dice {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 340px;
+  }
+  .card__pattern {
+    max-width: 300px;
+  }
+}
+
+h1.card__h1 {
+  color: var(--NeonGreen);
+  text-transform: uppercase;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+.card__advice {
+  font-weight: 800;
+  font-size: 28px;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.dice_container {
+  background-color: var(--NeonGreen);
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 1), rgba(0, 0, 0, 1);
+  position: relative;
+  bottom: -2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  tranform: scale(1);
+  animation: pulse-dice 2s infinite;
+}
+
+@keyframes pulse-dice {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
